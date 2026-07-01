@@ -1,0 +1,8 @@
+      # 📦 Artifact snapshot (conditional)
+      - name: Upload build snapshot
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: jekyll-build-snapshot
+          path: ./_site
+          retention-days: 7
